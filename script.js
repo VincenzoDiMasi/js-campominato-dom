@@ -50,6 +50,8 @@ const container = document.querySelector('.container');
 const h2 = document.querySelector('h2');
 const select = document.getElementById('difficulty');
 const grid = document.querySelector('.grid');
+const result = document.querySelector ('.message');
+const finalScore = document.querySelector('.score');
 
 // Event listener al button
 button.addEventListener('click', function(){
