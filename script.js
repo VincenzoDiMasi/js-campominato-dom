@@ -112,7 +112,14 @@ button.addEventListener('click', function(){
                 
                 console.log('Punteggio:' + score)
             }
-            
+
+            if (score === totalCells - bombs.length) {
+                // Se L'utente ha cliccato tutte le celle che non sono bombe, quindi ha vinto la partita
+                console.log('Hai vinto!');
+              }
+              
+            //Stabilisco un punteggio massimo
+            const maxScore = totalCells - bombs.length;
 
         });
         
