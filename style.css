@@ -68,7 +68,7 @@ footer{
 main h2{
     text-align: center;
     font-size: 50px;
-    margin-top: 150px;
+    margin-top: 20px;
 }
 
 .grid{
@@ -89,6 +89,19 @@ main h2{
 }
 .cell.clicked{
     background-color: dodgerblue;
+}
+
+.grid.easy .cell{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+.grid.medium .cell{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+.grid.hard .cell{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 /* Footer */

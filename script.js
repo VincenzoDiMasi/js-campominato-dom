@@ -53,6 +53,9 @@ const grid = document.querySelector('.grid');
 
 // Event listener al button
 button.addEventListener('click', function(){
+    // Rimuovo h2
+    container.removeChild(h2);
+
     const userChoise = select.value;
     let rows = 10;
     let cols = 10;
@@ -91,6 +94,30 @@ button.addEventListener('click', function(){
         }else{
            grid.classList.add('easy')
         }
+
+        // Event listener delle celle 
+        cell.addEventListener('click', function(){ 
+            if(cell.className === 'cell'){
+                
+                console.log('cella n:' + i);
+                if (bombs.includes(i)){
+                    cell.classList.add('bomb');
+                    console.log('Hai perso');
+
+                } else{
+                    cell.classList.add('clicked');
+                    // Incremento punteggio
+                    score += 1;    
+                }
+                
+                console.log('Punteggio:' + score)
+            }
+            
+
+        });
+        
+           
+        grid.appendChild(cell);
         
        
         
