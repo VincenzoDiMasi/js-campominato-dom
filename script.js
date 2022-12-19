@@ -74,6 +74,7 @@ button.addEventListener('click', function(){
     let score = 0;
 
     const bombs = [];
+    let message; 
  
     grid.innerHTML = '';
 
@@ -102,27 +103,26 @@ button.addEventListener('click', function(){
             if(cell.className === 'cell'){
                 
                 console.log('cella n:' + i);
-                if (bombs.includes(i)){
-                    cell.classList.add('bomb');
-                    console.log('Hai perso');
 
+               if (bombs.includes(i)){
+                  cell.classList.add('bomb');
+                  console.log('Game Over');
+                  result.innerText = 'Bomba!'
+                  finalScore.innerText = `Hai totalizzato: ${score} punti`; 
                 } else{
                     cell.classList.add('clicked');
                     // Incremento punteggio
                     score += 1;    
+                    const totalScore = totalCells - 16;
+                    console.log('punteggio totale' + totalScore);
+                    
+                    if (finalScore === score){
+                      result.innerText = 'Hai raggiunto il punteggio massimo!'
+                    }  
                 }
                 
                 console.log('Punteggio:' + score)
             }
-
-            //Stabilisco un punteggio massimo
-            const maxScore = totalCells - bombs.length;
-
-            if (score === maxScore) {
-                // Se l'user ha clickato su tutte le celle che non contengono bombe
-                console.log('Hai vinto!');
-              }
-              
 
         });
         
