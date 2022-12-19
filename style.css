@@ -104,6 +104,10 @@ main h2{
     height: calc(100% / 7);
 }
 
+.cell.bomb{
+    background-color: red;
+}
+
 /* Footer */
 footer {
     display: flex;
